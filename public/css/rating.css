@@ -21,7 +21,7 @@
   }
   
   .starability-result[data-rating="4"]::after {
-    width: 120px;
+    width: 121px;
   }
   
   .starability-result[data-rating="3"]::after {
