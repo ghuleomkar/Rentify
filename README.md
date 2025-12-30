@@ -53,7 +53,7 @@ airbnb-clone/
 ├── config/        # Config & environment files
 ├── app.js         # Main app file
 └── package.json
-
+---
 
 ---
 
