@@ -7,17 +7,11 @@ A full-stack web application inspired by Airbnb, built to practice real-world we
  📸 Features
 
 User authentication (Sign up / Login / Logout)
-
 Property listings with images
-
 Add, edit, and delete listings
-
 View listing details
-
 Responsive design
-
 Secure backend APIs
-
 Database integration
 
  📸 Tech Stack
@@ -57,7 +51,6 @@ airbnb-clone/
 ├── config/        # Config & environment files
 ├── app.js         # Main app file
 └── package.json
----
 
 ---
 
