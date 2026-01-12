@@ -84,7 +84,7 @@ body{
 /* Card Effect */
 
 .card-image-overlay{
-    opacity: 0;
+    opacity: 1;
 }
 
 .card-img-overlay:hover{

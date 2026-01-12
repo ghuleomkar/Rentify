@@ -6,7 +6,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=800&q=60",
     },
-    price: 1500,
+    price: 150000,
     location: "Malibu",
     country: "United States",
   },
