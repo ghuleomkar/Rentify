@@ -36,17 +36,17 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 
 ## ⭐ Key Features
 
-✅ Secure user authentication (Signup / Login / Logout)  
-✅ Create, edit, and delete property listings  
-✅ Upload and manage listing images  
-✅ View detailed property information  
-✅ Production-style MVC architecture  
-✅ Session-based authentication & authorization
-✅ Property reviews & ratings
-✅ Advanced search & filters
-✅ Maps integration
-✅ Responsive design for multiple screen sizes  
-✅ Robust backend with structured routes and controllers  
+- ✅ Secure user authentication (Signup / Login / Logout)  
+- ✅ Create, edit, and delete property listings  
+- ✅ Upload and manage listing images  
+- ✅ View detailed property information  
+- ✅ Production-style MVC architecture  
+- ✅ Session-based authentication & authorization  
+- ✅ Property reviews & ratings  
+- ✅ Advanced search & filters  
+- ✅ Maps integration  
+- ✅ Responsive design for multiple screen sizes  
+- ✅ Robust backend with structured routes and controllers  
 
 ---
 
@@ -124,7 +124,6 @@ http://localhost:8080
 
 - Online booking system  
 - Payment gateway integration  
-- Property reviews & ratings  
 - Advanced search & filters  
 - Maps integration  
 - Host dashboard  
