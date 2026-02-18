@@ -41,7 +41,10 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 ✅ Upload and manage listing images  
 ✅ View detailed property information  
 ✅ Production-style MVC architecture  
-✅ Session-based authentication & authorization  
+✅ Session-based authentication & authorization
+✅ Property reviews & ratings
+✅ Advanced search & filters
+✅ Maps integration
 ✅ Responsive design for multiple screen sizes  
 ✅ Robust backend with structured routes and controllers  
 
