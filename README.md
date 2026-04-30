@@ -7,11 +7,10 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 ---
 
 ## 🚀 Live Demo
-🌐 https://rentify-1-wi81.onrender.com/
 
-⭐ If you found this project valuable, consider giving it a star!
+🌐 https://rentify-1-wi81.onrender.com/  
 
----
+⚠️ Note: The server may take a few seconds to start due to cold starts (Render free tier).
 
 ## 🛠 Tech Stack
 
