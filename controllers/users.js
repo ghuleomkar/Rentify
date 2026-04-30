@@ -7,15 +7,18 @@ module.exports.renderSignupForm = (req,res)=>{
 
 module.exports.signup = async(req,res)=>{
    try{
-    let {username,email,password} = req.body;
+    let {username,email,password } = req.body;
+
+
     const newUser = new User({email,username});
     const registerUser = await User.register(newUser,password);
     console.log(registerUser);
+
     req.login(registerUser,(err)=>{
         if(err){
             return next(err);
         }
-        req.flash("success","Welcome to Airbnb");
+        req.flash("success","Welcome to Rentify");
         res.redirect("/listings");
     })
    } catch(e){
@@ -31,7 +34,7 @@ module.exports.renderLoginForm =(req,res)=>{
 };
 
 module.exports.login = async (req, res) => {
-    req.flash("success", "Welcome to Airbnb, you are logged in!");
+    req.flash("success", "Welcome to Rentify, you are logged in!");
     let redirectUrl = res.locals.redirectUrl || "/listings";
     res.redirect(redirectUrl);
 };

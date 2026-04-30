@@ -1,4 +1,4 @@
-<% layout("/layouts/boilerplate") %>
+ <% layout("/layouts/boilerplate") %>
     <div class="row mt-3">
         <div class="col-8 offset-3">
     <h3><%= listing.title %></h3>
@@ -9,14 +9,13 @@
       class="card-img-top show-img"
        alt="listing_image">
   <div class="card-body">
-    <p class="card-text">Owned by:  <i><%= listing.owner.username %></i></p>
-  </div>
-  <br>
+    <p class="card-text">Hosted by: <i>@<%= listing.owner.username %></i></p>
+  </div> <br/>
   <ul>
-    <li><p class="card-text"><%= listing.description %></p></li><br>
+    <li><p class="card-text"><%= listing.description %></p></li>
     <li><p class="card-text">&#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "Price not available" %></p></li>
     <li><p class="card-text"><%= listing.location %></p></li>
-    <li><p class="card-text"><%= listing.country %></p></li>
+    <li><p class="card-text"><%= listing.country %></p></li> 
 </ul>
 </div>
 
@@ -114,7 +113,9 @@
         
         <%if(listing.reviews.length > 0) { %>
         <div class="row">
+
           <p><b>All Reviews</b></p>
+          
         <% for(review of listing.reviews){ %>
             <div class="card col-5 ms-3 mb-3">
                 <div class="card-body">
@@ -140,21 +141,22 @@
   </div>
 
 
-<div class="col-8 offset-3">
-  <h3>Where you'll be</h3><br>
-  <input type="text" id="searchBox" placeholder="Enter address e.g. Nashik" /><br><br>
-  <div id="map"></div>
-</div>
-</div>
+
+   
 
 
-<!-- Map div -->
-<input type="text" id="searchBox" placeholder="Enter address e.g. Nashik" />
-<div id="map" style="height: 400px; width: 100%; margin-top: 10px;"></div>
+  <div class="col-8 offset-3">
+   <h3>Where you'll be</h3><br> 
+   <input type="text" id="searchBox" 
+   placeholder="Enter address e.g. Nashik"/><br><br> 
+   <div id="map" style="height : 450px" width: 100%; ></div> 
+  </div>
+ </div>
 
-<!-- Script -->
+
+ <!-- Script  -->
 <script>
-var map = L.map('map').setView([19.9975, 73.7898], 13); // Nashik
+var map = L.map('map').setView([19.9975, 73.7898], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
@@ -164,13 +166,25 @@ let marker;
 
 document.getElementById('searchBox').addEventListener('keyup', function (e) {
   if (e.key === 'Enter') {
-    let query =e.target.value;
-    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}`)
+    e.preventDefault();
+
+    let query = e.target.value;
+
+    if (!query.trim()) {
+      alert("Please enter a location");
+      return;
+    }
+
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${query}`, {
+      headers: {
+        "User-Agent": "my-app"
+      }
+    })
       .then(response => response.json())
       .then(data => {
         if (data.length > 0) {
-          let lat = data[0].lat;
-          let lon = data[0].lon;
+          let lat = parseFloat(data[0].lat);
+          let lon = parseFloat(data[0].lon);
 
           map.setView([lat, lon], 15);
 
@@ -188,8 +202,6 @@ document.getElementById('searchBox').addEventListener('keyup', function (e) {
   }
 });
 </script>
-
-
 
 
 

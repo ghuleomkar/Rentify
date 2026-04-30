@@ -2,21 +2,20 @@ if(process.env.NODE_ENV != "production") {
     require("dotenv").config();
 }
 
-const express = require("express");         //express require
+const express = require("express");   
 const app = express();
-const mongoose = require("mongoose");        //mongoose require
-const path = require("path");                //path require
-const methodOverride = require("method-override"); //methodOverride require
+const mongoose = require("mongoose");       
+const path = require("path");                
+const methodOverride = require("method-override"); 
 const ejsMate = require("ejs-mate"); 
 const ExpressError = require("./utils/ExpressError.js");
-const session = require("express-session");    //express-session require
+const session = require("express-session");    
 const MongoStore = require('connect-mongo');
-const flash = require("connect-flash");        //flash require
+const flash = require("connect-flash");       
 const passport = require("passport");
 const LocalStrategy =require("passport-local")
 const User = require("./models/user.js")
-const homeRouter = require("./routes/home")  //////
-
+const homeRouter = require("./routes/home") 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
@@ -102,16 +101,16 @@ app.get("/",(req,res)=>{
 })
 
 
-app.use("/listings",listingRouter);            //use listings
-app.use("/listings/:id/reviews",reviewRouter);  //listings/:id/reviews
+app.use("/listings",listingRouter);            
+app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 app.use("/", homeRouter);
 
 
-
+ 
 app.use((err, req, res, next)=>{
   let {statusCode = 500 , message = "something went wrong"} = err;
-    res.render("error.ejs",{message});
+    res.status(statusCode).render("error",{message});
 })
 
 
@@ -120,3 +119,4 @@ const port = process.env.PORT || 8080;
 app.listen(8080,()=>{
     console.log(`server is listening to port ${port}`);
 });
+

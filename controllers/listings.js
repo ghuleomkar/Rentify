@@ -46,7 +46,7 @@ module.exports.createListing = async(req, res, next) => {
 
 
     
-    // Geocoding - using OpenStreetMap Nominatim
+    // Geocoding - using OpenStreetMap Nomination
     const geoResponse = await axios.get("https://nominatim.openstreetmap.org/search", {
         params: {
             q: req.body.listing.location,
@@ -67,7 +67,7 @@ module.exports.createListing = async(req, res, next) => {
     } else {
         newListing.geometry = {
             type: "Point",
-            coordinates: [0, 0] // fallback if not found
+            coordinates: [77.2090, 28.6139] // fallback if not found
         };
     }
 
@@ -127,7 +127,8 @@ module.exports.deletelisting = async(req,res)=>{
 
 
 
-//Search 
+
+//search
 module.exports.index = async (req, res) => {
   const { search } = req.query;
   let allListings;
@@ -137,12 +138,25 @@ module.exports.index = async (req, res) => {
       $or: [
         { title: { $regex: search, $options: "i" } },
         { location: { $regex: search, $options: "i" } },
-        { country: { $regex: search, $options: "i" } }
+        { country: { $regex: search, $options: "i" } },
       ]
     });
+
+    if (allListings.length === 0) {
+      return res.render("listings/index.ejs", {
+        allListings: [],
+        search,
+        noResult: true
+      });
+    }
+
   } else {
     allListings = await Listing.find({});
   }
 
-  res.render("listings/index.ejs", { allListings, search });
+  res.render("listings/index.ejs", {
+    allListings,
+    search,
+    noResult: false
+  });
 };

@@ -3,7 +3,6 @@
     "node":"22.14.0"
   },
 
-
   "name": "fbd-project-w",
   "version": "1.0.0",
   "main": "index.js",

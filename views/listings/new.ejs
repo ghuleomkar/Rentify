@@ -2,6 +2,7 @@
    <div class="row">
     <div class="col-8 offset-2">
     <h3>Create a New Listing</h3>
+    <p class="text-muted">List your property for guests</p>
     <form 
     method="POST" 
     action="/listings" 
@@ -22,13 +23,11 @@
         
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea
-            name="listing[description]"
-            placeholder="enter description" class="form-control" required>
-  
-        </textarea>
-        <div class="invalid-feedback">Please enter a valid Price!</div>
+            <textarea name="listing[description]" placeholder="Enter Description" class="form-control" required></textarea>
+        <div class="invalid-feedback">Please enter a description</div>
         </div>
+
+       
      
 
 
@@ -42,13 +41,16 @@
         />
         
       </div>
+
+
+     
     
      <div class="row">
 
         <div class="mb-3 col-md-4">
-            <label for="price" class="form-label">Price</label>
-            <input name="listing[price]" placeholder="1200"  class="form-control" required />
-            <div class="invalid-feedback">Please enter a valid Price!</div>
+            <label for="price" class="form-label">Price (₹)</label>
+            <input type="number" name="listing[price]" placeholder="1200"  class="form-control" required />
+            <div class="invalid-feedback">Enter valid price ₹</div>
           </div>
     
     
@@ -73,10 +75,13 @@
       </div>
       
       <br /><br />
-      <button class="btn btn-dark add-btn">Add</button>
+      <button class="btn btn-dark add-btn">Add Listing</button>
       <br><br>
     </form>
   </div>
 </div>
 
- 
+
+
+
+

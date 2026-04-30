@@ -13,7 +13,6 @@ module.exports.createReview = async (req,res)=>{
     res.redirect(`/listings/${listing._id}`);
 };
 
-
 module.exports.deletereview = async(req,res)=>{
     let {id,reviewId} = req.params;
 
@@ -22,4 +21,5 @@ module.exports.deletereview = async(req,res)=>{
     req.flash("success","Review Deleted!")
     res.redirect(`/listings/${id}`);
 }
+
 
