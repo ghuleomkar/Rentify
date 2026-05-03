@@ -214,9 +214,63 @@ body{
 }
 
 
+    /* SearchBox */
+#searchBox {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: 0.3s;
+}
 
-/* Trending to boats icons & Tax Dislay */
-#filters{
+
+#searchBox:focus {
+    outline: none;
+    border-color: #ff385c;
+    box-shadow: 0 0 5px rgba(255,56,92,0.3);
+}
+ 
+/* Map */
+#map {
+
+    margin-bottom: 30px;
+    border-radius: 12px;                     /* smooth corners */
+    overflow: hidden;                        /* corners properly visible */
+    border: 1px solid #e0e0e0;               /* subtle border */
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);   /* soft shadow */
+    
+    transition: all 0.3s ease;               /* smooth hover */
+}
+
+#map:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+}
+
+
+.search-btn{
+    background-color:#fe424d;
+    color: #fff;
+    border-radius:25px;
+    padding:0 1rem 0 1rem;
+}
+.search-btn:hover{
+    background-color:#fe424d;
+    color: #fff;
+}
+.search-btn i {
+    display:inline;
+    margin-right:0.5rem;
+}
+.search-inp{
+    border-radius:25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+} 
+
+
+
+
+ #filters{
         display:flex;
         flex-wrap:wrap;
         align-items:center;
@@ -253,40 +307,48 @@ body{
       }
 
 
-    /* SearchBox */
-#searchBox {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    transition: 0.3s;
+
+
+/* category symbols */
+#filters {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+/* IMPORTANT FIX */
+.filter {
+  text-decoration: none;   /* remove underline */
+  display: flex;           /* make it like div */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+/* icon */
+.filter i {
+  margin-bottom: 5px;
+}
+
+/* hover */
+.filter:hover {
+  color: #fe424d;
+  transform: translateY(-3px);
+}
+
+/* active */
+.filter.active {
+  color: #fe424d;
+  font-weight: bold;
+}
+
+/* hide scrollbar */
+#filters::-webkit-scrollbar {
+  display: none;
 }
 
 
-#searchBox:focus {
-    outline: none;
-    border-color: #ff385c; /* Airbnb color */
-    box-shadow: 0 0 5px rgba(255,56,92,0.3);
-}
- 
-/* Map */
-#map {
-
-    margin-bottom: 30px;
-
-    
-    border-radius: 12px;                     /* smooth corners */
-    overflow: hidden;                        /* corners properly visible */
-    border: 1px solid #e0e0e0;               /* subtle border */
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);   /* soft shadow */
-    
-    transition: all 0.3s ease;               /* smooth hover */
-}
-
-#map:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transform: scale(1.01);
-}
 
 
 
@@ -300,23 +362,8 @@ body{
 
 
 
-.search-btn{
-    background-color:#fe424d;
-    color: #fff;
-    border-radius:25px;
-    padding:0 1rem 0 1rem;
-}
-.search-btn:hover{
-    background-color:#fe424d;
-    color: #fff;
-}
-.search-btn i {
-    display:inline;
-    margin-right:0.5rem;
-}
-.search-inp{
-    border-radius:25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-} 
+
+
+
 
 

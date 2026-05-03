@@ -19,16 +19,19 @@ const listingSchema = new Schema({
   location: String,
   country: String,
 
+
   reviews: [
     {
       type: Schema.Types.ObjectId,
       ref: "Review",
     },
   ],
+
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+
   geometry:{
     type:{
         type:String,
@@ -42,6 +45,7 @@ const listingSchema = new Schema({
 }
 });
 
+
 // Middleware for cascading deletes when a listing is deleted
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
@@ -51,9 +55,4 @@ listingSchema.post("findOneAndDelete", async (listing) => {
 
 const Listing = mongoose.model("Listing", listingSchema);
 module.exports = Listing;
-
-
-
-
-
 

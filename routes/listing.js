@@ -10,6 +10,7 @@ const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 
 
+
 //index route
 router
 .route("/" )
@@ -50,3 +51,8 @@ router.get(
 
 
 module.exports = router;
+
+
+
+
+

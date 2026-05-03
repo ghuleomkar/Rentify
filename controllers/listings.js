@@ -9,6 +9,7 @@ module.exports.index = async (req,res)=>{
 };
 
 
+
 //new
 module.exports.renderNewForm = (req,res)=>{
     res.render("listings/new.ejs");
@@ -36,6 +37,8 @@ module.exports.showlisting = async (req,res)=>{
 
 const axios = require("axios");
 
+
+// Create listing
 module.exports.createListing = async(req, res, next) => {
     let url = req.file.path;
     let filename = req.file.filename;
@@ -160,3 +163,5 @@ module.exports.index = async (req, res) => {
     noResult: false
   });
 };
+
+
