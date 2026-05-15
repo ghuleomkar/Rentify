@@ -16,12 +16,13 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 
 **Frontend:** HTML, CSS, JavaScript, EJS  
 **Backend:** Node.js, Express.js  
-**Database:** MongoDB, Mongoose
-**Architecture:** MVC Pattern, REST APIs
+**Database:** MongoDB, Mongoose                                                                                                                                            
+**Architecture:** MVC Pattern, REST APIs                     
 **Authentication & Security:** Passport.js, Express Session, Cookie-Parser  
-**Media Storage:** Cloudinary, Multer 
+**Media Storage:** Cloudinary, Multer                                                                                                                                
 **Deployment:** Render 
 
+---
 
 ## 📌 Prerequisites
 
