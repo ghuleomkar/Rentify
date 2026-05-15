@@ -12,6 +12,8 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 
 ⚠️ Note: The server may take a few seconds to start due to cold starts (Render free tier).
 
+---
+
 ## 🛠 Tech Stack
 
 **Frontend:** HTML, CSS, JavaScript, EJS  
