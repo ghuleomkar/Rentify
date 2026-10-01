@@ -14,6 +14,17 @@ A scalable full-stack property rental platform inspired by Airbnb, designed to s
 
 ---
 
+## 📸 Application Screenshots
+
+### 🏠 Listings Page
+![Rentify Listings](screenshots/listings.png)
+
+### 🏡 Listing Details
+![Listing Details](screenshots/details.png)
+
+### ➕ Create Listing
+![Create Listing](screenshots/create-listing.png)
+
 ## 🛠 Tech Stack
 
 **Frontend:** HTML, CSS, JavaScript, EJS  
@@ -91,7 +102,7 @@ SESSION_SECRET=your_secret_key
 
 ### 5️⃣ Start the server
 ```bash
-npm start
+node app.js
 ```
 
 ### 6️⃣ Open in browser
