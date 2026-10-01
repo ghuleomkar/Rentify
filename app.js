@@ -96,10 +96,9 @@ app.use((req,res,next)=>{
 });
 
 
-app.get("/",(req,res)=>{
-    res.render("home");
-})
-
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 app.use("/listings",listingRouter);            
 app.use("/listings/:id/reviews",reviewRouter);
@@ -109,6 +108,7 @@ app.use("/", homeRouter);
 
  
 app.use((err, req, res, next)=>{
+    console.error("FULL ERROR:", err);
   let {statusCode = 500 , message = "something went wrong"} = err;
     res.status(statusCode).render("error",{message});
 })

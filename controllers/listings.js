@@ -56,7 +56,7 @@ module.exports.createListing = async(req, res, next) => {
             format: "json"
         },
         headers: {
-            'User-Agent': 'YourAppName/1.0 (your@email.com)' // Nominatim requires this
+            'User-Agent': 'Rentify/1.0 (samarthghule872@gmail.com)' // Nominatim requires this
         }
     });
 

@@ -351,6 +351,300 @@ body{
 
 
 
+/*
+   RENTIFY - RESPONSIVE IMPROVEMENTS */
+
+/* Navbar and search */
+.navbar {
+  min-width: 0;
+}
+
+.navbar .navbar-brand {
+  flex-shrink: 0;
+}
+
+.navbar .navbar-toggler {
+  padding: 6px 9px;
+  border-radius: 8px;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(254, 66, 77, 0.15);
+}
+
+.navbar .search-inp {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Property cards */
+.listing-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.listing-card .card-img-top {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.listing-link {
+  color: inherit;
+  min-width: 0;
+}
+
+.listing-card .card-text {
+  overflow-wrap: anywhere;
+  padding-top: 10px;
+}
+
+/* Category filters */
+#filters {
+  flex-wrap: nowrap;
+  gap: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+#filters .filter {
+  flex-shrink: 0;
+}
+
+#filters .tax-toggle {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Tablet and mobile */
+@media (max-width: 767.98px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .navbar .navbar-collapse {
+    padding-top: 12px;
+  }
+
+  .navbar .navbar-nav.ms-auto {
+    margin-left: 0 !important;
+  }
+
+  .navbar .navbar-nav a.nav-link {
+    margin: 0;
+    padding: 10px 4px;
+  }
+
+  .navbar form.d-flex {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .navbar form.d-flex .search-inp {
+    flex: 1;
+    width: 0;
+    padding: 10px 12px;
+  }
+
+  .navbar form.d-flex .search-btn {
+    flex-shrink: 0;
+    justify-content: center;
+    padding: 10px 14px;
+  }
+
+  #filters {
+    padding: 12px 0;
+    gap: 20px;
+  }
+
+  #filters .filter {
+    margin: 8px 0;
+  }
+
+  #filters .tax-toggle {
+    margin: 0;
+    padding: 8px 10px;
+    height: auto;
+    font-size: 12px;
+  }
+
+  .listing-card .card-img-top {
+    height: 230px !important;
+  }
+
+  .listing-card {
+    margin-bottom: 0;
+  }
+
+  .show-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  #map {
+    max-width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .navbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .navbar .search-btn {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .listing-card .card-img-top {
+    height: 205px !important;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .listing-card {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+/* RENTIFY - MOBILE RESPONSIVENESS FIX  */
+
+@media (max-width: 767.98px) {
+
+  /* Category filters: one horizontal row */
+  #filters {
+    display: flex;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 12px 4px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  #filters .filter {
+    flex: 0 0 auto;
+    min-width: 52px;
+    margin: 0 !important;
+    padding: 4px 0;
+  }
+
+  #filters .filter p {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Tax toggle: keep it compact */
+  #filters .tax-toggle {
+    flex: 0 0 auto;
+    margin: 0 !important;
+    padding: 8px 10px;
+    height: auto;
+    white-space: nowrap;
+    font-size: 12px;
+    background: #fff;
+  }
+
+  /* Navbar search layout */
+  .navbar form.d-flex {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .navbar form.d-flex .search-inp {
+    flex: 1 1 0%;
+    width: 0;
+    min-width: 0;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .navbar form.d-flex .search-btn {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
+  /* Mobile navigation spacing */
+  .navbar .navbar-collapse {
+    min-width: 0;
+  }
+
+  .navbar .navbar-nav.ms-auto {
+    align-items: stretch;
+  }
+
+  .navbar .navbar-nav.ms-auto .nav-link {
+    padding: 10px 4px;
+    margin: 0;
+  }
+
+  /* Listing images */
+  .listing-card .card-img-top {
+    width: 100%;
+    height: 230px !important;
+    object-fit: cover;
+  }
+
+  /* Prevent oversized content */
+  .listing-link,
+  .listing-card,
+  .card-body {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Map stays inside the screen */
+  #map {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+
+  .navbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .navbar form.d-flex .search-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  #filters {
+    gap: 14px;
+  }
+
+  .listing-card .card-img-top {
+    height: 205px !important;
+  }
+}
 
 
 
@@ -358,12 +652,127 @@ body{
 
 
 
+/* RENTIFY - SHOW PAGE MOBILE FIX  */
+
+@media (max-width: 767.98px) {
+
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Reset Bootstrap grid offsets on show page */
+  .container > .row.mt-3 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .container > .row.mt-3 > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Property card */
+  .show-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* Property image */
+  .show-img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Property content */
+  .show-card .card-body {
+    padding: 12px !important;
+    overflow-wrap: anywhere;
+  }
+
+  /* Edit and delete buttons */
+  .btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .btns .btn {
+    margin: 0 !important;
+  }
+
+  /* Reviews section */
+  .container > .row.mt-3 .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .container > .row.mt-3 .row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 12px;
+  }
+
+  /* Review cards */
+  .review-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 16px !important;
+    overflow-wrap: anywhere;
+  }
+
+  /* Map */
+  #map {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 
 
 
 
 
+/* Fix Edit and Delete buttons on mobile */
+@media (max-width: 576px) {
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
 
+    .btns .edit-btn {
+        width: auto;
+        min-width: 72px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
 
+    .btns form {
+        margin: 0;
+    }
 
+    .btns form button {
+        white-space: nowrap;
+    }
+}
